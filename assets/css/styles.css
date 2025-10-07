@@ -3447,7 +3447,7 @@ input[type="button"].btn--primary:focus {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/header-bg-3000.jpg);
+    background-image: url(../images/header-bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -3478,7 +3478,7 @@ input[type="button"].btn--primary:focus {
     width: 100%;
     height: 100%;
     background: linear-gradient(360deg, black 15%, rgba(0, 0, 0, 0) 100%);
-    opacity: .4;
+    opacity: .1;
 }
 
 /* ------------------------------------------------------------------- 
@@ -3878,117 +3878,6 @@ input[type="button"].btn--primary:focus {
 
 
 /* ===================================================================
- * # resume 
- *
- * ------------------------------------------------------------------- */
-.s-resume {
-    background-color: white;
-    padding-top: calc(6 * var(--space));
-    padding-bottom: var(--vspace-4);
-
-    --logo-size: 256px;
-    --logo-radius: 64px;
-}
-
-.s-resume__section {
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--vspace-0_75);
-    margin-bottom: var(--vspace-2_5);
-}
-
-.s-resume__section:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
-/* ------------------------------------------------------------------- 
- * ## resume block
- * ------------------------------------------------------------------- */
-.resume-block {
-    display: grid;
-    grid-template-columns: var(--logo-size) 1fr;
-    gap: var(--space);
-    align-items: start;
-    margin-bottom: var(--vspace-1_75);
-}
-
-.resume-block__logo {
-    inline-size: var(--logo-size);
-    block-size: var(--logo-size);
-    min-inline-size: var(--logo-size);
-    min-block-size: var(--logo-size);
-    border-radius: var(--logo-radius);
-    background: #f4f6f8
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-}
-
-.resume-block__logo img {
-    max-inline-size: 80%;
-    max-block-size: 80%;
-    object-fit: contain;
-    display: block;
-}
-
-.resume-block__body {
-    min-width: 0;
-}
-
-
-.resume-block h4 {
-    line-height: 1.080;
-    margin-top: 0;
-    margin-bottom: var(--vspace-0_25);
-}
-
-.resume-block__header-meta {
-    font-family: var(--font-2);
-    font-size: calc(var(--text-size) * 1.1111);
-    font-style: italic;
-    margin-top: -.4rem;
-    margin-bottom: var(--vspace-0_75);
-}
-
-.resume-block__header-meta span:first-child {
-    margin-right: .6rem;
-}
-
-.resume-block__header-date {
-    display: inline-block;
-    font-family: var(--font-1);
-    font-size: calc(var(--text-size) * 0.8889);
-    font-size: var(--text-sm);
-    font-style: normal;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    color: var(--color-text-light);
-}
-
-.resume-block__header-date::before {
-    content: "\2022";
-    color: var(--color-text);
-    margin-right: .2rem;
-}
-
-/* ------------------------------------------------------------------- 
- * responsive:
- * resume
- * ------------------------------------------------------------------- */
-@media screen and (max-width: 800px) {
-    .s-resume {
-        --logo-size: 48px;
-        --logo-radius: 10px;
-        padding-top: var(--vspace-4);
-    }
-    .s-resume__section .column:first-child {
-        text-align: center;
-    }
-}
-
-
-/* ===================================================================
  * # portfolio
  *
  * ------------------------------------------------------------------- */
@@ -4010,7 +3899,7 @@ input[type="button"].btn--primary:focus {
  * ## portfolio list
  * ------------------------------------------------------------------- */
 .folio-list {
-    max-width: 1180px;
+    max-width: 1600px;
     margin-top: var(--vspace-2_5);
 }
 
@@ -4089,6 +3978,117 @@ input[type="button"].btn--primary:focus {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
 }
+
+
+/* ===================================================================
+ * # resume 
+ *
+ * ------------------------------------------------------------------- */
+.s-resume {
+    background-color: white;
+    padding-top: calc(3 * var(--space));
+    padding-bottom: var(--vspace-2);
+
+    --logo-size: 256px;
+}
+
+.s-resume__section {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--vspace-0_25);
+    margin-bottom: var(--vspace-1_5);
+}
+
+.s-resume__section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## resume block
+ * ------------------------------------------------------------------- */
+.resume-block {
+    display: grid;
+    grid-template-columns: var(--logo-size) 1fr;
+    gap: var(--space);
+    align-items: start;
+    margin-bottom: var(--vspace-0_25);
+}
+
+.resume-block__logo {
+    inline-size: var(--logo-size);
+    block-size: var(--logo-size);
+    min-inline-size: var(--logo-size);
+    min-block-size: var(--logo-size);
+    border-radius: var(--logo-radius);
+    background: #f4f6f8
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.resume-block__logo img {
+    max-inline-size: 80%;
+    max-block-size: 80%;
+    object-fit: contain;
+    display: block;
+}
+
+.resume-block__body {
+    min-width: 0;
+}
+
+
+.resume-block h4 {
+    line-height: 1.080;
+    margin-top: 0;
+    margin-bottom: var(--vspace-0_25);
+}
+
+.resume-block__header-meta {
+    font-family: var(--font-2);
+    font-size: calc(var(--text-size) * 1.1111);
+    font-style: italic;
+    margin-top: -.4rem;
+    margin-bottom: var(--vspace-0_75);
+}
+
+.resume-block__header-meta span:first-child {
+    margin-right: .6rem;
+}
+
+.resume-block__header-date {
+    display: inline-block;
+    font-family: var(--font-1);
+    font-size: calc(var(--text-size) * 0.8889);
+    font-size: var(--text-sm);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--color-text-light);
+}
+
+.resume-block__header-date::before {
+    content: "\2022";
+    color: var(--color-text);
+    margin-right: .2rem;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * resume
+ * ------------------------------------------------------------------- */
+@media screen and (max-width: 800px) {
+    .s-resume {
+        --logo-size: 48px;
+        --logo-radius: 10px;
+        padding-top: var(--vspace-4);
+    }
+    .s-resume__section .column:first-child {
+        text-align: center;
+    }
+}
+
 
 /* ------------------------------------------------------------------- 
  * ## modal popup
@@ -4169,254 +4169,6 @@ input[type="button"].btn--primary:focus {
     background-color: var(--color-1);
     border-color: var(--color-1);
     color: white;
-}
-
-
-/* ===================================================================
- * # CTA
- *
- * ------------------------------------------------------------------- */
-.s-cta {
-    background-color: var(--color-gray-1);
-    padding-top: var(--vspace-2_5);
-    padding-bottom: var(--vspace-3_5);
-    font-weight: 400;
-    font-size: var(--text-lg);
-    line-height: var(--vspace-1_25);
-    text-align: center;
-    position: relative;
-}
-
-.s-cta .section-desc {
-    margin-top: 0;
-}
-
-.s-cta::before {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 20vw;
-    min-width: 150px;
-    background-color: var(--color-gray-3);
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    position: absolute;
-    top: 0;
-    left: 50%;
-}
-
-.cta-content {
-    max-width: 800px;
-}
-
-.cta-content .btn {
-    max-width: 600px;
-}
-
-/* ------------------------------------------------------------------- 
- * responsive:
- * cta
- * ------------------------------------------------------------------- */
-@media screen and (max-width: 800px) {
-    .s-cta {
-        font-size: var(--text-md);
-        line-height: var(--vspace-1);
-    }
-    .cta-content {
-        max-width: 600px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .s-cta .section-desc {
-        font-size: var(--text-xl);
-        line-height: var(--vspace-1_25);
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .s-cta {
-        padding-top: var(--vspace-3);
-        padding-bottom: var(--vspace-3);
-        font-size: var(--text-size);
-    }
-    .s-cta .section-desc {
-        font-size: var(--text-lg);
-        line-height: var(--vspace-1);
-    }
-}
-
-
-/* ===================================================================
- * # testimonials
- *
- * ------------------------------------------------------------------- */
-.s-testimonials {
-    padding-top: var(--vspace-5);
-    padding-bottom: var(--vspace-3_5);
-    color: rgba(255, 255, 255, 0.8);
-    background-color: var(--color-gray-19);
-    overflow: hidden;
-    position: relative;
-}
-
-.s-testimonials__bg {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/testimonials-bg-3000.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.s-testimonials__bg::before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-gray-19);
-    opacity: .8;
-}
-
-.s-testimonials h3 {
-    margin-top: 0;
-    color: white;
-}
-
-.s-testimonials__header, .s-testimonials__content {
-    position: relative;
-}
-
-.s-testimonials__header {
-    text-align: center;
-    margin-bottom: var(--vspace-2);
-}
-
-.s-testimonials__content>.column:first-child {
-    min-height: 0;
-    min-width: 0;
-}
-
-/* ------------------------------------------------------------------- 
- * ## swiper style overrides
- * ------------------------------------------------------------------- */
-.s-testimonials .swiper-container {
-    padding-bottom: var(--vspace-2_5);
-}
-
-.s-testimonials .swiper-container-horizontal .swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 9px;
-}
-
-.s-testimonials .swiper-pagination-bullet {
-    width: 6px;
-    height: 6px;
-    background: white;
-    opacity: 0.4;
-}
-
-.s-testimonials .swiper-pagination-bullet-active {
-    background: var(--color-1);
-    opacity: 1;
-}
-
-/* ------------------------------------------------------------------- 
- * ## testimonial slider 
- * ------------------------------------------------------------------- */
-.testimonial-slider {
-    position: relative;
-}
-
-.testimonial-slider p {
-    font-weight: 400;
-    font-size: 1.7rem;
-    line-height: var(--vspace-1);
-}
-
-.testimonial-slider__slide {
-    position: relative;
-}
-
-.testimonial-slider__author {
-    display: inline-block;
-    min-height: var(--vspace-2);
-    margin-bottom: var(--vspace-0_5);
-    padding-left: 8.8rem;
-    position: relative;
-}
-
-.testimonial-slider__avatar {
-    width: var(--vspace-2);
-    height: var(--vspace-2);
-    border-radius: 100%;
-    outline: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.testimonial-slider__cite {
-    display: block;
-}
-
-.testimonial-slider__cite strong, 
-.testimonial-slider__cite span {
-    font-style: normal;
-}
-
-.testimonial-slider__cite strong {
-    font-size: calc(var(--text-size) * 0.944);
-    line-height: var(--vspace-0_5);
-    color: white;
-}
-
-.testimonial-slider__cite span {
-    display: block;
-    font-size: calc(var(--text-size) * 0.778);
-    font-weight: 300;
-    line-height: var(--vspace-0_5);
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* ------------------------------------------------------------------- 
- * responsive:
- * testimonials
- * ------------------------------------------------------------------- */
-@media screen and (max-width: 800px) {
-    .testimonial-slider__slide {
-        text-align: center;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .testimonial-slider__author {
-        padding-left: 6.8rem;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .testimonial-slider__author {
-        padding-left: 0;
-        margin-bottom: var(--vspace-0_5);
-        min-height: 0;
-        text-align: center;
-    }
-    .testimonial-slider__avatar {
-        display: inline-block !important;
-        margin: 0;
-        position: static;
-    }
 }
 
 
