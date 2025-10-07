@@ -4028,7 +4028,7 @@ input[type="button"].btn--primary:focus {
 }
 
 .resume-block__logo img {
-    max-inline-size: 80%;
+    max-inline-size: 100%;
     max-block-size: 80%;
     object-fit: contain;
     display: block;
