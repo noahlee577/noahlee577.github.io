@@ -3885,6 +3885,9 @@ input[type="button"].btn--primary:focus {
     background-color: white;
     padding-top: calc(6 * var(--space));
     padding-bottom: var(--vspace-4);
+
+    --logo-size: 256px;
+    --logo-radius: 64px;
 }
 
 .s-resume__section {
@@ -3903,8 +3906,36 @@ input[type="button"].btn--primary:focus {
  * ## resume block
  * ------------------------------------------------------------------- */
 .resume-block {
+    display: grid;
+    grid-template-columns: var(--logo-size) 1fr;
+    gap: var(--space);
+    align-items: start;
     margin-bottom: var(--vspace-1_75);
 }
+
+.resume-block__logo {
+    inline-size: var(--logo-size);
+    block-size: var(--logo-size);
+    min-inline-size: var(--logo-size);
+    min-block-size: var(--logo-size);
+    border-radius: var(--logo-radius);
+    background: #f4f6f8
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.resume-block__logo img {
+    max-inline-size: 80%;
+    max-block-size: 80%;
+    object-fit: contain;
+    display: block;
+}
+
+.resume-block__body {
+    min-width: 0;
+}
+
 
 .resume-block h4 {
     line-height: 1.080;
@@ -3947,6 +3978,8 @@ input[type="button"].btn--primary:focus {
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 800px) {
     .s-resume {
+        --logo-size: 48px;
+        --logo-radius: 10px;
         padding-top: var(--vspace-4);
     }
     .s-resume__section .column:first-child {
