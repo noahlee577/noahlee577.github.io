@@ -98,9 +98,11 @@
 :root {
     /* color-1(#11ABB0)
      * color-2(#F06000)
+     * color-3(#204C39) Dark green
      */
     --color-1: hsla(182, 82%, 38%, 1);
     --color-2: hsla(24, 100%, 47%, 1);
+    --color-3: hsla(154, 41%, 21%, 1);
 
     /* theme color variations
      */
@@ -3807,14 +3809,14 @@ input[type="button"].btn--primary:focus {
     color: white;
 }
 
-.s-about__content-bottom .btn--download {
+.s-about__content-bottom .btn--contact {
     background-color: white;
     border-color: white;
     color: black;
     margin-right: 0;
 }
 
-.s-about__content-bottom .btn--download svg {
+.s-about__content-bottom .btn--contact svg {
     height: 2rem;
     width: 2rem;
     vertical-align: middle;
@@ -3823,14 +3825,14 @@ input[type="button"].btn--primary:focus {
     transition: all 0.3s ease-in-out;
 }
 
-.s-about__content-bottom .btn--download:hover, 
-.s-about__content-bottom .btn--download:focus {
+.s-about__content-bottom .btn--contact:hover, 
+.s-about__content-bottom .btn--contact:focus {
     background-color: var(--color-2);
     border-color: var(--color-2);
 }
 
-.s-about__content-bottom .btn--download:hover svg path, 
-.s-about__content-bottom .btn--download:focus svg path {
+.s-about__content-bottom .btn--contact:hover svg path, 
+.s-about__content-bottom .btn--contact:focus svg path {
     fill: white;
 }
 
@@ -3864,14 +3866,14 @@ input[type="button"].btn--primary:focus {
 }
 
 @media screen and (max-width: 600px) {
-    .s-about__content-bottom .btn--download {
+    .s-about__content-bottom .btn--contact {
         margin-top: var(--vspace-0_5);
         width: 100%;
     }
 }
 
 @media screen and (max-width: 360px) {
-    .s-about__content-bottom .btn--download svg {
+    .s-about__content-bottom .btn--contact svg {
         display: none;
     }
 }
@@ -4177,14 +4179,15 @@ input[type="button"].btn--primary:focus {
  *
  * ------------------------------------------------------------------- */
 .s-contact {
-    background-color: var(--color-gray-18);
-    padding-top: calc(6 * var(--space));
-    padding-bottom: var(--vspace-3_5);
+    background-color: var(--color-3);
+    padding-top: calc(1 * var(--space));
+    padding-bottom: var(--vspace-0_5);
+    text-align: center;
 }
 
 .s-contact .section-header-allcaps {
     color: white;
-    margin-bottom: var(--vspace-2_5);
+    margin-bottom: var(--vspace-1_5);
 }
 
 .s-contact .huge-text {
@@ -4192,40 +4195,24 @@ input[type="button"].btn--primary:focus {
     margin-top: 0;
     font-weight: 400;
     font-size: 4.6rem;
-    line-height: 1.304;
+    line-height: 1.104;
 }
 
-.s-contact__content [class*="column"]:last-child {
-    margin-left: auto;
+.s-contact__content {
+    justify-content: center;
 }
 
-/* ------------------------------------------------------------------- 
- * ## contact block
- * ------------------------------------------------------------------- */
-.contact-infos .btn {
-    margin-top: var(--vspace-0_75);
+.s-contact__content .column {
+    width: 100%;
 }
 
-.contact-block {
-    font-size: 2.8rem;
-    font-weight: 400;
-    line-height: 1.286;
-}
-
-.contact-block a {
-    color: white;
-}
-
-.contact-block a:hover, .contact-block a:focus {
-    color: var(--color-2);
-}
-
-.contact-block__header {
-    font-size: 2.2rem;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.4);
-    margin-top: 0;
-    margin-bottom: .2rem;
+.s-contact__content iframe {
+    display: block;
+    width: 100%;
+    height: 90vh;
+    min-height: 600px;
+    border: 0;
+    margin 0 auto;
 }
 
 /* ------------------------------------------------------------------- 
@@ -4260,11 +4247,8 @@ input[type="button"].btn--primary:focus {
     .s-contact .huge-text {
         font-size: 3.4rem;
     }
-    .contact-block {
-        font-size: 2.6rem;
-    }
-    .contact-block__header {
-        font-size: 1.8rem;
+    .s-contact__content iframe {
+        min-height: 520 px;
     }
 }
 
@@ -4272,17 +4256,17 @@ input[type="button"].btn--primary:focus {
     .s-contact .huge-text {
         font-size: 3.2rem;
     }
-    .contact-block {
-        font-size: 2.2rem;
-    }
-    .contact-block__header {
-        font-size: 1.6rem;
+    .s-contact__content iframe {
+        min-height: 500 px;
     }
 }
 
 @media screen and (max-width: 360px) {
     .s-contact .huge-text {
         font-size: 3rem;
+    }
+    .s-contact__content iframe {
+        min-height: 400 px;
     }
 }
 
