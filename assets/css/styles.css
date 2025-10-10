@@ -4040,7 +4040,6 @@ input[type="button"].btn--primary:focus {
     min-width: 0;
 }
 
-
 .resume-block h4 {
     line-height: 1.080;
     margin-top: 0;
@@ -4092,12 +4091,13 @@ input[type="button"].btn--primary:focus {
   --tab-width: 13ch;
   list-style: none;
   margin: 0;
+  margin-left: -3rem;
   padding: 0;
 }
 
 .resume-block__year_item > li {
   display: grid;
-  grid-template-columns: var(--tab-width, 12ch) 1fr;
+  grid-template-columns: var(--tab-width, 13ch) 1fr;
   column-gap: 1rem;
   align-items: baseline;
   padding: .25rem 0;
