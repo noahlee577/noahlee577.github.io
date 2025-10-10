@@ -3989,7 +3989,7 @@ input[type="button"].btn--primary:focus {
 .s-resume {
     background-color: white;
     padding-top: calc(3 * var(--space));
-    padding-bottom: var(--vspace-2);
+    padding-bottom: var(--vspace-1);
 
     --logo-size: 256px;
 }
@@ -4014,7 +4014,7 @@ input[type="button"].btn--primary:focus {
     grid-template-columns: var(--logo-size) 1fr;
     gap: var(--space);
     align-items: start;
-    margin-bottom: var(--vspace-0_25);
+    margin-bottom: var(--vspace-0_75);
 }
 
 .resume-block__logo {
@@ -4074,6 +4074,47 @@ input[type="button"].btn--primary:focus {
     content: "\2022";
     color: var(--color-text);
     margin-right: .2rem;
+}
+
+.resume-block__header-meta-no-logo {
+    font-family: var(--font-1);
+    font-size: calc(var(--text-size) * 1.1111);
+    margin-top: -.4rem;
+    margin-bottom: -2rem;
+    margin-left: -2rem;
+}
+
+.resume-block__header-meta-no-logo span:first-child {
+    margin-right: .6rem;
+}
+
+.resume-block__year_item {
+  --tab-width: 13ch;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.resume-block__year_item > li {
+  display: grid;
+  grid-template-columns: var(--tab-width, 12ch) 1fr;
+  column-gap: 1rem;
+  align-items: baseline;
+  padding: .25rem 0;
+}
+
+.resume-block__year_item .year {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums; 
+  white-space: nowrap;
+  text-align: right;
+  opacity: .85;
+  line-height: 1.35;
+}
+
+.resume-block__year_item .desc {
+  overflow-wrap: anywhere;
+  line-height: 1.35;
 }
 
 /* ------------------------------------------------------------------- 
