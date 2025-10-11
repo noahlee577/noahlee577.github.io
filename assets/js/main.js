@@ -2,7 +2,6 @@
  * Ceevee 2.0.0 - Main JS
  *
  * ------------------------------------------------------------------- */
-
 (function(html) {
 
     "use strict";
@@ -65,7 +64,6 @@
 
             let loc = window.scrollY;
            
-
             if (loc > triggerHeight) {
                 hdr.classList.add('sticky');
             } else {
@@ -155,10 +153,13 @@
                 * sectionId variable we are getting while looping through sections as 
                 * an selector
                 */
+                const navLink = document.querySelector(".s-header__nav a[href*=" + sectionId + "]");
+                if (!navLink) return;
+
                 if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    document.querySelector(".s-header__nav a[href*=" + sectionId + "]").parentNode.classList.add("current");
+                    navLink.parentNode.classList.add("current");
                 } else {
-                    document.querySelector(".s-header__nav a[href*=" + sectionId + "]").parentNode.classList.remove("current");
+                    navLink.parentNode.classList.remove("current");
                 }
             });
         }
@@ -194,38 +195,67 @@
     }; // end ssSwiper
 
 
-   /* Lightbox
+   /* Lightbox (extended to support portfolio cards + deep-links)
     * ------------------------------------------------------ */
     const ssLightbox = function() {
 
-        const folioLinks = document.querySelectorAll('.folio-item a');
-        const modals = [];
+        // Combine original grid triggers and new card triggers in #portfolio
+        const rawTriggers = document.querySelectorAll('.folio-item a, #portfolio .js-open-modal');
+        const triggers = Array.from(rawTriggers).filter(function(link) {
+            const href = link.getAttribute('href') || '';
+            return link.hasAttribute('data-modal') || href.startsWith('#');
+        });
 
-        folioLinks.forEach(function(link) {
-            let modalbox = link.getAttribute('href');
-            let instance = basicLightbox.create(
-                document.querySelector(modalbox),
+        if (!triggers.length) return;
+
+        const instances = [];
+
+        triggers.forEach(function(link) {
+            // Determine modal selector (prefer data-modal)
+            const modalId = link.getAttribute('data-modal') || (link.getAttribute('href') || '').replace('#', '');
+            if (!modalId) return;
+
+            const selector = '#' + modalId;
+            const modalNode = document.querySelector(selector);
+            if (!modalNode) return;
+
+            // Create a basicLightbox instance cloning the hidden template node
+            const instance = basicLightbox.create(
+                modalNode,
                 {
-                    onShow: function(instance) {
-                        //detect Escape key press
-                        document.addEventListener("keydown", function(evt) {
+                    onShow: function(inst) {
+                        // Escape key closes
+                        const onKey = function(evt) {
                             evt = evt || window.event;
-                            if(evt.keyCode === 27){
-                            instance.close();
+                            if (evt.key === 'Escape' || evt.keyCode === 27) {
+                                inst.close();
                             }
-                        });
+                        };
+                        document.addEventListener('keydown', onKey, { once: true });
                     }
                 }
-            )
-            modals.push(instance);
+            );
+            instances.push({ link, instance });
         });
 
-        folioLinks.forEach(function(link, index) {
-            link.addEventListener("click", function(e) {
+        // Bind clicks
+        instances.forEach(function(item) {
+            item.link.addEventListener("click", function(e) {
                 e.preventDefault();
-                modals[index].show();
+                item.instance.show();
             });
         });
+
+        // Deep-link support (#modal-xx)
+        if (location.hash && /^#modal-\d+/.test(location.hash)) {
+            const target = document.querySelector(location.hash);
+            if (target) {
+                // open with a fresh instance so it works even w/o a trigger
+                const deepInstance = basicLightbox.create(target);
+                // slight defer to ensure layout is ready
+                setTimeout(function() { deepInstance.show(); }, 100);
+            }
+        }
 
     };  // end ssLightbox
 
@@ -296,6 +326,26 @@
     }; // end ssBackToTop
 
 
+   /* Portfolio Enhancements: scroll reveal for cards/figures
+    * ------------------------------------------------------ */
+    const ssScrollReveal = function () {
+        // Reveals elements with .reveal-on-scroll by adding .is-visible
+        const targets = document.querySelectorAll('#portfolio .reveal-on-scroll');
+        if (!targets.length) return;
+
+        const observer = new IntersectionObserver(function(entries, obs) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        targets.forEach(function(el) { observer.observe(el); });
+    }; // end ssScrollReveal
+
+
 
    /* initialize
     * ------------------------------------------------------ */
@@ -307,10 +357,11 @@
         ssMobileMenu();
         ssScrollSpy();
         ssSwiper();
-        ssLightbox();
+        ssLightbox();     // now powers both old grid and new portfolio cards (and deep-links)
         ssAlertBoxes();
         ssSmoothScroll();
         ssBackToTop();
+        ssScrollReveal(); // figures/cards ease-in on scroll
 
     })();
 
