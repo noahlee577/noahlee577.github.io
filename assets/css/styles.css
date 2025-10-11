@@ -103,6 +103,7 @@
     --color-1: hsla(182, 82%, 38%, 1);
     --color-2: hsla(24, 100%, 47%, 1);
     --color-3: hsla(154, 41%, 21%, 1);
+    --color-4: hsla(198, 100%, 50%, 1);
 
     /* theme color variations
      */
@@ -3883,6 +3884,13 @@ input[type="button"].btn--primary:focus {
  * # portfolio
  *
  * ------------------------------------------------------------------- */
+.s-portfolio {
+    --color-border: var(--color-gray-16);
+    background-color: var(--color-4);
+    padding-bottom: var(--vspace-4);
+    color: rgba(255, 255, 255, 0.4);
+}
+
 #portfolio .s-portfolio__sub {
   color: var(--color-gray-8, #6b7280);
   margin-top: .25rem;
