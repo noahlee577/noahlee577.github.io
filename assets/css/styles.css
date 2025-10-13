@@ -3942,12 +3942,12 @@ input[type="button"].btn--primary:focus {
   height: 100%;
   object-fit: cover;
   display: block;
-  transform: scale(1.02);
+  transform: scale(1.00);
   transition: transform .6s ease;
 }
 
 #portfolio .portfolio-card:hover .portfolio-figure img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 #portfolio .figure-cta {
@@ -4010,6 +4010,7 @@ input[type="button"].btn--primary:focus {
 #portfolio .portfolio-excerpt {
   margin: 0;
   color: var(--color-gray-8, #374151);
+  font-size: 0.5rem;
 }
 
 #portfolio .portfolio-actions {
