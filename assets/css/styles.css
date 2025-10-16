@@ -4065,38 +4065,20 @@ input[type="button"].btn--primary:focus {
   transition: opacity .6s cubic-bezier(.22,.8,.36,1),
               transform .6s cubic-bezier(.22,.8,.36,1);
 }
-
-/* Modal overlay (uses your hidden modal templates) */
-#portfolio .portfolio-modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, .6);
-  display: grid;
-  place-items: center;
-  z-index: 9999;
-  padding: 24px;
-}
-#portfolio .portfolio-modal {
-  position: relative;
-  max-width: min(960px, 92vw);
-  max-height: 88vh;
-  overflow: auto;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 12px 48px rgba(0,0,0,.2);
-  padding: clamp(16px, 2vw, 24px);
-}
-#portfolio .portfolio-modal .modal-popup img {
+#portfolio .modal-popup img {
   width: 100%;
   height: auto;
   border-radius: 10px;
   margin-bottom: 14px;
 }
-#portfolio .portfolio-modal .modal-popup__desc h5 {
+#portfolio .modal-popup__desc h5 {
   margin: 0 0 6px;
   font-size: 1.15rem;
 }
-#portfolio .portfolio-modal .modal-popup__details {
+#portfolio .modal-popup__desc p {
+  font-size: 1rem;
+}
+#portfolio .modal-popup__details {
   display: inline-block;
   margin-top: 8px;
   text-decoration: none;
