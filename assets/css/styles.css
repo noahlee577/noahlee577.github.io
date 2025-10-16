@@ -4141,16 +4141,16 @@ input[type="button"].btn--primary:focus {
  * ------------------------------------------------------------------- */
 .s-resume {
     background-color: white;
-    padding-top: calc(3 * var(--space));
-    padding-bottom: var(--vspace-1);
+    padding-top: calc(1.5 * var(--space));
+    padding-bottom: calc(0.5 * var(--vspace-1));
 
-    --logo-size: 256px;
+    --logo-size: 128px;
 }
 
 .s-resume__section {
     border-bottom: 1px solid var(--color-border);
     padding-bottom: var(--vspace-0_25);
-    margin-bottom: var(--vspace-1_5);
+    margin-bottom: var(--vspace-0_5);
 }
 
 .s-resume__section:last-child {
@@ -4158,6 +4158,14 @@ input[type="button"].btn--primary:focus {
     padding-bottom: 0;
     margin-bottom: 0;
 }
+
+.s-resume__section p {
+    margin-top: var(--vspace-0_25);
+    margin-bottom: var(--vspace-0_25);
+    line-height: 1.180;
+}
+
+
 
 /* ------------------------------------------------------------------- 
  * ## resume block
@@ -4204,7 +4212,7 @@ input[type="button"].btn--primary:focus {
     font-size: calc(var(--text-size) * 1.1111);
     font-style: italic;
     margin-top: -.4rem;
-    margin-bottom: var(--vspace-0_75);
+    margin-bottom: var(--vspace-0_25);
 }
 
 .resume-block__header-meta span:first-child {
@@ -4257,12 +4265,12 @@ input[type="button"].btn--primary:focus {
 }
 
 .resume-block__year_item .year {
-  font-weight: 600;
+  font-weight: 400;
   font-variant-numeric: tabular-nums; 
   white-space: nowrap;
   text-align: right;
   opacity: .85;
-  line-height: 1.35;
+  line-height: 1.15;
 }
 
 .resume-block__year_item .desc {
