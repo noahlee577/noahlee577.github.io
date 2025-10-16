@@ -4048,7 +4048,7 @@ input[type="button"].btn--primary:focus {
 #portfolio .btn-paper:hover { box-shadow: 0 6px 18px rgba(0,0,0,.12); }
 
 #portfolio .btn-details {
-  background: #eef2ff;
+  background: #ded2df;
   color: #1f2937;
 }
 #portfolio .btn-details:hover { box-shadow: 0 6px 18px rgba(31,41,55,.15); }
